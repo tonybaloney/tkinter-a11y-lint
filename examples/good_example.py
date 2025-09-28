@@ -16,9 +16,7 @@ name_entry = tk.Entry(root, takefocus=True)
 
 # Good: Checkbutton with text and focus
 agree_checkbox = tk.Checkbutton(
-    root, 
-    text="I agree to the terms and conditions",
-    takefocus=True
+    root, text="I agree to the terms and conditions", takefocus=True
 )
 
 # Good: Text widget with proper focus
@@ -32,19 +30,9 @@ options_listbox.insert(1, "Option 2")
 # Good: Radiobuttons with proper accessibility
 radio_var = tk.StringVar()
 radio1 = tk.Radiobutton(
-    root, 
-    text="Yes", 
-    variable=radio_var, 
-    value="yes",
-    takefocus=True
+    root, text="Yes", variable=radio_var, value="yes", takefocus=True
 )
-radio2 = tk.Radiobutton(
-    root, 
-    text="No", 
-    variable=radio_var, 
-    value="no",
-    takefocus=True
-)
+radio2 = tk.Radiobutton(root, text="No", variable=radio_var, value="no", takefocus=True)
 
 # Layout widgets (Frame, etc.) don't need accessibility attributes
 main_frame = tk.Frame(root)

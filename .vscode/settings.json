@@ -25,5 +25,5 @@
             "source.organizeImports": "explicit"
         },
         "editor.rulers": [88]
-    }
+        }
 }
