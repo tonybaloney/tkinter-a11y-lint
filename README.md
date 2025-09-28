@@ -15,14 +15,6 @@ This plugin provides the following accessibility checks for tkinter applications
 pip install tkinter-a11y-lint
 ```
 
-Or install from source:
-
-```bash
-git clone https://github.com/yourusername/tkinter-a11y-lint.git
-cd tkinter-a11y-lint
-pip install -e .
-```
-
 ## Usage
 
 ### Command Line
@@ -79,33 +71,3 @@ entry.configure(takefocus=True)
 # or
 entry = tk.Entry(root, takefocus=True)
 ```
-
-## Development
-
-### Setup Development Environment
-
-```bash
-git clone https://github.com/yourusername/tkinter-a11y-lint.git
-cd tkinter-a11y-lint
-pip install -e ".[dev]"
-```
-
-### Running Tests
-
-```bash
-pytest
-```
-
-### Code Formatting
-
-```bash
-black tkinter_a11y_lint/
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
