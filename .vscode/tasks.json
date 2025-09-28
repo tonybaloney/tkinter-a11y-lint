@@ -1,0 +1,95 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Install Plugin (Development Mode)",
+            "type": "shell",
+            "command": "./.venv/Scripts/pip.exe",
+            "args": ["install", "-e", "."],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Test Plugin on Bad Example",
+            "type": "shell",
+            "command": "./.venv/Scripts/pylint.exe",
+            "args": [
+                "--load-plugins=tkinter_a11y_lint.plugin",
+                "--disable=all",
+                "--enable=missing-text-attribute,missing-tab-index",
+                "examples/bad_example.py"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": {
+                "owner": "pylint",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.+?):(\\d+):(\\d+):\\s+(\\w\\d+):\\s+(.+?)\\s+\\((.+?)\\)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5,
+                    "code": 6
+                }
+            }
+        },
+        {
+            "label": "Test Plugin on Good Example",
+            "type": "shell", 
+            "command": "./.venv/Scripts/pylint.exe",
+            "args": [
+                "--load-plugins=tkinter_a11y_lint.plugin",
+                "--disable=all",
+                "--enable=missing-text-attribute,missing-tab-index", 
+                "examples/good_example.py"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": {
+                "owner": "pylint",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.+?):(\\d+):(\\d+):\\s+(\\w\\d+):\\s+(.+?)\\s+\\((.+?)\\)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5,
+                    "code": 6
+                }
+            }
+        },
+        {
+            "label": "Run Tests",
+            "type": "shell",
+            "command": "./.venv/Scripts/python.exe",
+            "args": ["-m", "pytest", "tests/"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

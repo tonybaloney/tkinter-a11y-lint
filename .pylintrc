@@ -1,0 +1,14 @@
+[MASTER]
+# Load the tkinter accessibility plugin
+load-plugins=tkinter_a11y_lint.plugin
+
+[MESSAGES CONTROL]
+# Enable all messages from our plugin
+enable=missing-text-attribute,missing-tab-index
+
+# You can disable specific messages if needed
+# disable=missing-tab-index
+
+[TKINTER-A11Y]
+# Plugin-specific configuration can go here
+# Currently no custom configuration options are available

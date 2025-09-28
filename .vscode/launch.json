@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+        },
+        {
+            "name": "Test Plugin on Bad Example",
+            "type": "python",
+            "request": "launch",
+            "module": "pylint",
+            "args": [
+                "--load-plugins=tkinter_a11y_lint.plugin",
+                "--disable=all",
+                "--enable=missing-text-attribute,missing-tab-index",
+                "examples/bad_example.py"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+        },
+        {
+            "name": "Test Plugin on Good Example", 
+            "type": "python",
+            "request": "launch",
+            "module": "pylint",
+            "args": [
+                "--load-plugins=tkinter_a11y_lint.plugin",
+                "--disable=all", 
+                "--enable=missing-text-attribute,missing-tab-index",
+                "examples/good_example.py"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+        }
+    ]
+}
