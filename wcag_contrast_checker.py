@@ -209,36 +209,3 @@ def get_contrast_grade(contrast_ratio: float, large_text: bool = False) -> str:
             return "AA"
         else:
             return "FAIL"
-
-
-# Example usage and testing
-if __name__ == "__main__":
-    # Test cases
-    test_cases = [
-        # Good contrast examples
-        ("#000000", "#FFFFFF", False),  # Black on white
-        ("#FFFFFF", "#000000", False),  # White on black
-        ("#767676", "#FFFFFF", False),  # Gray on white
-        # Poor contrast examples
-        ("#777777", "#FFFFFF", False),  # Light gray on white
-        ("#CCCCCC", "#FFFFFF", False),  # Very light gray on white
-        # Large text examples
-        ("#777777", "#FFFFFF", True),  # Same gray but large text
-        ("#999999", "#FFFFFF", True),  # Lighter gray with large text
-    ]
-
-    print("WCAG 2.1 Contrast Checker Test Results")
-    print("=" * 50)
-
-    for fg, bg, large in test_cases:
-        result = check_wcag_contrast(fg, bg, large_text=large, level="AA")
-        grade = get_contrast_grade(result["contrast_ratio"], large)
-
-        print(f"\nForeground: {fg}")
-        print(f"Background: {bg}")
-        print(f"Text size: {'Large' if large else 'Normal'}")
-        print(f"Contrast ratio: {result['contrast_ratio']}:1")
-        print(f"Grade: {grade}")
-        print(f"Passes AA: {result['passes_aa']}")
-        print(f"Passes AAA: {result['passes_aaa']}")
-        print("-" * 30)
